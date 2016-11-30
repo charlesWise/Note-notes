@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="./react.min.js"></script>
+    <script src="./react-dom.min.js"></script>
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var TextClass = React.createClass({
+        componentWillReceiveProps:function(newProps){
+            console.log("componentWillReciveProps,1");
+            console.log(newProps);      //Object {name: "react-life"}
+        },
+        shouldComponentUpdate:function(nextProps, nextState){
+            console.log("shouldComponentUdate,2");
+            console.log('nextProps',nextProps);     //Object {name: "react-life"}
+            console.log('nextState',nextState);     //Object null
+            return true;
+        },
+        componentWillUpdate:function(){
+            console.log("componentWillUpdate,3");
+        },
+        componentDidUpdate:function(prevProps, prevState){
+            console.log("componentDidUpadate,5");
+            console.log('prevProps',prevProps);     //Object {name: "reac"} 少了t 总是比nextProps前一个值的变化
+            console.log('prevState',prevState);     //Object null
+        },
+        render:function(){
+            console.log("render,4");
+            return (
+                <div>
+                    <p>hello:{this.props.name ? this.props.name : "world!"}</p>
+                </div>
+            );
+        }
+    });
+
+    var TextSourceClass = React.createClass({
+        getInitialState:function(){
+            return {name :''};
+        },
+        handleChange:function(event){
+            this.setState({name : event.target.value});
+        },
+        render:function(){
+            return <div>
+                <TextClass name = {this.state.name}></TextClass>
+                <br/><input type="text" onChange = {this.handleChange}/>
+            </div>;
+        },
+    });
+
+    ReactDOM.render(
+            <TextSourceClass></TextSourceClass>,
+            document.getElementById('example')
+    );
+</script>
+</body>
+</html>
