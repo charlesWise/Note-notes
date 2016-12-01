@@ -188,3 +188,36 @@ let input
           input = v
         }} />
 console.log(input.value)    //就是input的值
+
+******************************************************************
+function getKey(enabled) {
+    retrue: enabled;
+}
+//bad不推荐
+const obj = {
+    id: 5,
+    name: 'San Francisco',
+};
+obj[getKey('enabled')] = true;
+
+//good
+const obj = {
+    id: 5,
+    name: 'San Francisco',
+    [getKey('enabled')]: true,
+};
+******************************************************************
+const obj = [name: 'chen', age: 18, sex: '男'];
+[...items] = obj;
+console.log(items);  //[name: 'chen', age: 18, sex: '男']
+******************************************************************
+//bad
+function handThings(opts) {
+    opts = opts || {};
+}
+//good
+function handThings(opts = {}) {
+    
+}
+******************************************************************
+ 
