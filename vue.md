@@ -34,3 +34,8 @@ Vue.component('parent-component', {
     }
 })
 ****************************************************************************************
+v-link="{ path: '/about'}"
+<p>当前路径：<code>{{$route.path}}</code></p>
+<p>当前参数：<code>{{$route.params | json}}</code></p>
+<p>路由名称：<code>{{$route.name}}</code></p>
+<p>路由查询参数：<code>{{$route.query | json}}</code></p>
