@@ -17,3 +17,7 @@
 <p>changeSize	是否改变图片大小</p>
 <p>maxWidth		图片最大宽度，仅当changeSize为true的时候有效</p>
 <p>maxHeight	图片最大高度，仅当changeSize为true的时候有效</p>
+
+test.html   普通的上传
+test2.html  压缩的上传
+index.html  是基于封装好的上传
