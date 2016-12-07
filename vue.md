@@ -39,3 +39,8 @@ v-link="{ path: '/about'}"
 <p>当前参数：<code>{{$route.params | json}}</code></p>
 <p>路由名称：<code>{{$route.name}}</code></p>
 <p>路由查询参数：<code>{{$route.query | json}}</code></p>
+****************************************************************************************
+tab
+<l1 v-for="(item, idx) in items" :class="curIdx === idx ? 'expanded' : 'collapsed'" @click="curIdx = idx">
+  <l2></l2>
+</l1>

@@ -58,6 +58,33 @@ let input
           input = v
         }} />
 console.log(input.value)    //就是input的值
+
+//使用ref=() => {}箭头函数的形式来获取子组件this值
+class Parent extends PureComponent {
+  componentDidMount() {
+    console.log(this.child._input) // 这里就能拿到子组件的input
+  }
+  render() {
+    return (
+      <div>
+        <Childed ref={r => this.child = r} />
+      </div>
+    )
+  }
+}
+
+class Childed extends PureComponent {
+
+  render() {
+    return (
+      <div>
+        <input type="text" ref={r => this._input = r} />
+      </div>
+    )
+  }
+}
+******************************************************************
+
 ******************************************************************
 function getKey(enabled) {
     retrue: enabled;

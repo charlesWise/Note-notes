@@ -124,5 +124,5 @@ class ValidCode extends Component {
     </TouchableOpacity>
     </View>
     );
-}
+    }
 }
