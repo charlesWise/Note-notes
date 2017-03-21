@@ -1,3 +1,4 @@
+``` bash
 this.$children[i] //获取子组件this指向
 this.$parent //获取父组件this指向
 ****************************************************************************************
@@ -44,3 +45,4 @@ tab
 <l1 v-for="(item, idx) in items" :class="curIdx === idx ? 'expanded' : 'collapsed'" @click="curIdx = idx">
   <l2></l2>
 </l1>
+```

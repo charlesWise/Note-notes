@@ -1,3 +1,4 @@
+``` bash
 Boolean(!this.props.noArrow)
 sceneConfigs: Navigator.SceneConfigs.PushFromRight //通过这个参数可以修改界面在导航时候切换的动画。
 router.push(Routes.COMMON_PDF_READER, {
@@ -126,3 +127,4 @@ class ValidCode extends Component {
     );
     }
 }
+```

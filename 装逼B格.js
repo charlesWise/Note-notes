@@ -1,3 +1,4 @@
+``` bash
 /*闭包*/
 foo.addEventListener('click', (function() {
     var times = 0;
@@ -10,3 +11,4 @@ foo.addEventListener('click', (function() {
 /*String转化为Number*/
 +'45'
 +new Date
+``` 
